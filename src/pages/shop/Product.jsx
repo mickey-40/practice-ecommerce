@@ -1,7 +1,20 @@
 import React from 'react'
 
-export default function Product() {
+const Product = (props) => {
+  const { id, productName, price, productImage } = props.data;
   return (
-    <div>Product</div>
+    <div className='product'>
+      <img src={productImage} alt='product' />
+      <div className='description'>
+        <p>
+          <b>{productName}</b>
+        </p>
+        <p>${price}</p>
+      </div>
+      <button className='addToCartButton'> Add To Cart </button>
+    </div>
   )
 }
+
+
+export default Product;
